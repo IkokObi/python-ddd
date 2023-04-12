@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     PORT: ClassVar[str] = "3306"
     DATABASE: ClassVar[str] = "ddd_hotel"
 
-    SQLALCHEMY_DATABASE_URI: ClassVar[
+    SQLALCHEMY_DATABASE_URL: ClassVar[
         str
     ] = f"{DRIVER}://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
 
