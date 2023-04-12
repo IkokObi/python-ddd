@@ -16,7 +16,7 @@ class RoomSchema(BaseModel):
 
     @classmethod
     def from_entity(cls, room: Room) -> RoomSchema:
-        return cls(number=room.number, status=room.status)
+        return cls(number=room.number, status=room.room_status)
 
 
 class GuestSchema(BaseModel):
@@ -41,7 +41,7 @@ class ReservationSchema(BaseModel):
         return cls(
             room=RoomSchema.from_entity(reservation.room),
             reservation_number=reservation.reservation_number.value,
-            status=reservation.status,
+            status=reservation.reservation_status,
             date_in=reservation.date_in,
             date_out=reservation.date_out,
             guest=GuestSchema.from_entity(reservation.guest),
